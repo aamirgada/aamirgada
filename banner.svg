@@ -1,94 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="1280"
-    height="740"
-    viewBox="0 0 1280 740">
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+width="1280"
+height="740"
+viewBox="0 0 1280 740">
 
 <title>Mohd Aamir GitHub Banner</title>
+
+<style><![CDATA[
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0px);}
+}
+
+.terminal{
+font-family:Consolas,Monaco,monospace;
+font-size:18px;
+fill:white;
+}
+
+.heading{
+font-family:Poppins,Arial,sans-serif;
+font-weight:700;
+fill:white;
+}
+
+.body{
+font-family:Poppins,Arial,sans-serif;
+font-size:20px;
+fill:white;
+}
+
+.small{
+font-family:Poppins,Arial,sans-serif;
+font-size:17px;
+fill:#d7d7d7;
+}
+
+]]></style>
 
 <defs>
 
 <!-- Rounded Clip -->
-<clipPath id="bannerClip">
-    <rect x="20" y="20" width="1240" height="700" rx="28"/>
+
+<clipPath id="clip">
+
+<rect
+x="20"
+y="20"
+width="1240"
+height="700"
+rx="28"/>
+
 </clipPath>
 
-<!-- Animated Background -->
-<linearGradient id="bgGradient"
-    x1="0%"
-    y1="0%"
-    x2="100%"
-    y2="100%">
+<!-- Background Gradient -->
 
-    <stop offset="0%" stop-color="#17081E">
-        <animate attributeName="stop-color"
-            values="#17081E;#240A39;#17081E"
-            dur="8s"
-            repeatCount="indefinite"/>
-    </stop>
+<linearGradient
+id="bg"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%">
 
-    <stop offset="50%" stop-color="#4D126F">
-        <animate attributeName="stop-color"
-            values="#4D126F;#A42EFF;#4D126F"
-            dur="8s"
-            repeatCount="indefinite"/>
-    </stop>
+<stop offset="0%" stop-color="#18091f">
 
-    <stop offset="100%" stop-color="#FF4FC8">
-        <animate attributeName="stop-color"
-            values="#FF4FC8;#B248FF;#FF4FC8"
-            dur="8s"
-            repeatCount="indefinite"/>
-    </stop>
+<animate
+attributeName="stop-color"
+values="#18091f;#32104a;#18091f"
+dur="10s"
+repeatCount="indefinite"/>
+
+</stop>
+
+<stop offset="60%" stop-color="#44135d">
+
+<animate
+attributeName="stop-color"
+values="#44135d;#6f1ec6;#44135d"
+dur="10s"
+repeatCount="indefinite"/>
+
+</stop>
+
+<stop offset="100%" stop-color="#ff56d5">
+
+<animate
+attributeName="stop-color"
+values="#ff56d5;#9b56ff;#ff56d5"
+dur="10s"
+repeatCount="indefinite"/>
+
+</stop>
 
 </linearGradient>
 
-<!-- Neon Glow -->
-<filter id="glow">
+<!-- Pink Gradient -->
 
-<feGaussianBlur
-stdDeviation="6"
-result="blur"/>
+<linearGradient id="pink">
 
-<feMerge>
-<feMergeNode in="blur"/>
-<feMergeNode in="SourceGraphic"/>
-</feMerge>
+<stop offset="0%" stop-color="#ff4fd8"/>
 
-</filter>
-
-<!-- Strong Glow -->
-
-<filter id="bigGlow">
-
-<feGaussianBlur
-stdDeviation="15"
-result="blur"/>
-
-<feMerge>
-<feMergeNode in="blur"/>
-<feMergeNode in="SourceGraphic"/>
-</feMerge>
-
-</filter>
-
-<!-- Glass Blur -->
-
-<filter id="glass">
-
-<feGaussianBlur stdDeviation="12"/>
-
-</filter>
-
-<!-- Tech Gradient -->
-
-<linearGradient id="pinkPurple">
-
-<stop offset="0%" stop-color="#ff5dcf"/>
-
-<stop offset="100%" stop-color="#9c4dff"/>
+<stop offset="100%" stop-color="#9f54ff"/>
 
 <animateTransform
 attributeName="gradientTransform"
@@ -100,50 +116,99 @@ repeatCount="indefinite"/>
 
 </linearGradient>
 
+<!-- Glow -->
+
+<filter id="glow">
+
+<feGaussianBlur
+stdDeviation="6"
+result="blur"/>
+
+<feMerge>
+
+<feMergeNode in="blur"/>
+
+<feMergeNode in="SourceGraphic"/>
+
+</feMerge>
+
+</filter>
+
+<!-- Strong Glow -->
+
+<filter id="bigGlow">
+
+<feGaussianBlur
+stdDeviation="16"
+result="blur"/>
+
+<feMerge>
+
+<feMergeNode in="blur"/>
+
+<feMergeNode in="SourceGraphic"/>
+
+</feMerge>
+
+</filter>
+
+<!-- Shadow -->
+
+<filter id="shadow">
+
+<feDropShadow
+dx="0"
+dy="8"
+stdDeviation="10"
+flood-color="#000"
+flood-opacity=".5"/>
+
+</filter>
+
 </defs>
 
-<g clip-path="url(#bannerClip)">
+<g clip-path="url(#clip)">
 
 <!-- Background -->
 
 <rect
 width="1280"
 height="740"
-fill="url(#bgGradient)"/>
+fill="url(#bg)"/>
 
-<!-- Ambient Glow -->
+<!-- Ambient Orb -->
 
 <circle
-cx="980"
-cy="160"
+cx="1080"
+cy="120"
 r="240"
-fill="#ff59c8"
-opacity=".10">
+fill="#ff55d8"
+opacity=".12">
 
 <animate
 attributeName="r"
 values="220;260;220"
+dur="8s"
+repeatCount="indefinite"/>
+
+</circle>
+
+<circle
+cx="180"
+cy="640"
+r="190"
+fill="#9958ff"
+opacity=".10">
+
+<animate
+attributeName="r"
+values="170;220;170"
 dur="7s"
 repeatCount="indefinite"/>
 
 </circle>
 
-<circle
-cx="270"
-cy="610"
-r="190"
-fill="#9c4dff"
-opacity=".10">
-
-<animate
-attributeName="r"
-values="180;210;180"
-dur="9s"
-repeatCount="indefinite"/>
-
-</circle>
-
-<!-- Main Glass Panel -->
+<!-- Glass Panel -->
 
 <rect
 
@@ -151,18 +216,123 @@ x="30"
 y="30"
 width="1220"
 height="680"
-rx="26"
+rx="28"
 
 fill="#12081d"
 
-fill-opacity=".22"
+fill-opacity=".25"
 
-stroke="#ff66dd"
+stroke="#ff66d8"
 
 stroke-opacity=".35"
 
 filter="url(#glow)"/>
 
+<!-- Decorative Grid -->
+
+<g opacity=".08">
+
+<path d="M0 80H1280"/>
+<path d="M0 160H1280"/>
+<path d="M0 240H1280"/>
+<path d="M0 320H1280"/>
+<path d="M0 400H1280"/>
+<path d="M0 480H1280"/>
+<path d="M0 560H1280"/>
+<path d="M0 640H1280"/>
+
+<path d="M80 0V740"/>
+<path d="M160 0V740"/>
+<path d="M240 0V740"/>
+<path d="M320 0V740"/>
+<path d="M400 0V740"/>
+<path d="M480 0V740"/>
+<path d="M560 0V740"/>
+<path d="M640 0V740"/>
+<path d="M720 0V740"/>
+<path d="M800 0V740"/>
+<path d="M880 0V740"/>
+<path d="M960 0V740"/>
+<path d="M1040 0V740"/>
+<path d="M1120 0V740"/>
+<path d="M1200 0V740"/>
+
 </g>
 
-</svg>
+<!-- Floating Particles -->
+
+<g>
+
+<circle cx="1100" cy="620" r="3" fill="#ff66dd">
+
+<animate
+attributeName="cy"
+values="620;80"
+dur="8s"
+repeatCount="indefinite"/>
+
+<animate
+attributeName="opacity"
+values="0;1;0"
+dur="8s"
+repeatCount="indefinite"/>
+
+</circle>
+
+<circle cx="1020" cy="700" r="2" fill="#ffffff">
+
+<animate
+attributeName="cy"
+values="700;120"
+dur="7s"
+repeatCount="indefinite"/>
+
+</circle>
+
+<circle cx="960" cy="650" r="2" fill="#ff8df1">
+
+<animate
+attributeName="cy"
+values="650;100"
+dur="9s"
+repeatCount="indefinite"/>
+
+</circle>
+
+</g>
+
+<!-- Sparkles -->
+
+<g>
+
+<circle cx="250" cy="150" r="2" fill="white">
+
+<animate
+attributeName="r"
+values="1;4;1"
+dur="2s"
+repeatCount="indefinite"/>
+
+</circle>
+
+<circle cx="520" cy="320" r="2" fill="#ff69dd">
+
+<animate
+attributeName="opacity"
+values="0;1;0"
+dur="3s"
+repeatCount="indefinite"/>
+
+</circle>
+
+<circle cx="980" cy="260" r="2" fill="white">
+
+<animate
+attributeName="r"
+values="1;5;1"
+dur="4s"
+repeatCount="indefinite"/>
+
+</circle>
+
+</g>
